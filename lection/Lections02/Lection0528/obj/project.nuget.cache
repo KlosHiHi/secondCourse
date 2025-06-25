@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "SACJME+PDRw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Вячеслав\\Desktop\\Lections2\\Lection0528\\Lection0528.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Вячеслав\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.5\\system.configuration.configurationmanager.9.0.5.nupkg.sha512",
+    "C:\\Users\\Вячеслав\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.5\\system.diagnostics.eventlog.9.0.5.nupkg.sha512",
+    "C:\\Users\\Вячеслав\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.5\\system.security.cryptography.protecteddata.9.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Image\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\bold.png" />
+    <None Remove="Image\center.png" />
+    <None Remove="Image\close.png" />
+    <None Remove="Image\create.png" />
+    <None Remove="Image\discord.png" />
+    <None Remove="Image\github.png" />
+    <None Remove="Image\italic.png" />
+    <None Remove="Image\justify.png" />
+    <None Remove="Image\left.png" />
+    <None Remove="Image\menu.png" />
+    <None Remove="Image\open.png" />
+    <None Remove="Image\paint.png" />
+    <None Remove="Image\print.png" />
+    <None Remove="Image\question.png" />
+    <None Remove="Image\right.png" />
+    <None Remove="Image\save.png" />
+    <None Remove="Image\splashScreen.png" />
+    <None Remove="Image\steam.png" />
+    <None Remove="Image\tictok.png" />
+    <None Remove="Image\underline.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Image\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Image\splashScreen.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\bold.png" />
+    <Resource Include="Image\center.png" />
+    <Resource Include="Image\close.png" />
+    <Resource Include="Image\create.png" />
+    <Resource Include="Image\discord.png" />
+    <Resource Include="Image\github.png" />
+    <Resource Include="Image\italic.png" />
+    <Resource Include="Image\justify.png" />
+    <Resource Include="Image\left.png" />
+    <Resource Include="Image\menu.png" />
+    <Resource Include="Image\open.png" />
+    <Resource Include="Image\paint.png" />
+    <Resource Include="Image\print.png" />
+    <Resource Include="Image\question.png" />
+    <Resource Include="Image\right.png" />
+    <Resource Include="Image\save.png" />
+    <Resource Include="Image\steam.png" />
+    <Resource Include="Image\tictok.png" />
+    <Resource Include="Image\underline.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="LabWork27.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork27"
+        mc:Ignorable="d"
+        Title="{Binding ElementName=ContentFrame, Path=Content.Title}" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Header" Height="100"/>
+            <RowDefinition x:Name="ContentMain"/>
+            <RowDefinition x:Name="Footer" Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1FFF60"/>
+                    <GradientStop Color="AliceBlue" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1FFF60" Offset="0.75"/>
+                    <GradientStop Color="AliceBlue"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Frame x:Name="ContentFrame" Grid.Row="1"
+               Source="/Pages/MainPage.xaml" 
+               Background="AliceBlue" 
+               ContentRendered="ContentFrame_ContentRendered"
+               NavigationUIVisibility="Hidden"/>
+        
+        <Button x:Name="BackButton" Content="Назад" Height="30" Width="80" HorizontalAlignment="Right" Margin="10" Click="BackButton_Click" VerticalAlignment="Center"/>
+        <Image Source="/Fichier 37.png" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

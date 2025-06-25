@@ -1,0 +1,14 @@
+﻿<Window x:Class="SpaceShooter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SpaceShooter"
+        Title="Space Adventures" Height="500" Width="700" Background="Black" MinHeight="500" MinWidth="700"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        MouseDown="Window_MouseDown">
+    <Canvas x:Name="GameCanvas" Background="#FF00003C" Margin="10">
+        <Rectangle Width="15" Height="15" Fill="Red" Canvas.Left="10" Canvas.Top="20"/>
+        <Rectangle Width="15" Height="15" Fill="Red" Canvas.Left="30" Canvas.Top="20"/>
+        <Rectangle Width="15" Height="15" Fill="Red" Canvas.Left="50" Canvas.Top="20"/>
+        <Rectangle x:Name="PlayerRectangle" Height="15" Width="30" Fill="LawnGreen" Canvas.Left="335" Canvas.Bottom="20"/>
+    </Canvas>
+</Window>

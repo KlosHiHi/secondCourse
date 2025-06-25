@@ -1,0 +1,12 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task4"
+        mc:Ignorable="d"
+        Title="Главная" Height="450" Width="300" MinHeight="450" MinWidth="300">
+    <Grid Background="PaleTurquoise">
+        <Button x:Name="ToAuthButton" Content="Авторизоваться" Height="60" Width="200" FontSize="20" Background="AntiqueWhite" BorderBrush="Azure" BorderThickness="3" Click="ToAuthButton_Click"/>
+    </Grid>
+</Window>

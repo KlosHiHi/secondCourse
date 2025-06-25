@@ -1,0 +1,28 @@
+[
+  {
+    "Name": "Api + Console",
+    "Projects": [
+      {
+        "Path": "WebApi\\WebApi.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "ConsoleApp\\ConsoleApp.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "Api + App",
+    "Projects": [
+      {
+        "Path": "WebApi\\WebApi.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "WebApp\\WebApp.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+ [LOG] Control scheme file not found, but this is okay.
+ [LOG] Initialising control scheme menu
+ [LOG] Jukebox not found. Can't load custom jukebox files.
+ [LOG] {
+  "CollisionQuality": "Dynamic",
+  "StopAnimationOnDamage": false,
+  "DropOnDeath": true,
+  "ShakeIntensity": 1.0,
+  "ShowOutlines": true,
+  "SlowMotionSpeed": 20.0,
+  "AmbientTemperatureTransfer": false,
+  "PhysicsIterations": 32,
+  "GridSnap": 0.25,
+  "AngleSnap": 15,
+  "ShowModLoadingFreeze": true,
+  "RejectShadyCode": true,
+  "MaxModCompilationTime": 30,
+  "GorelessMode": false,
+  "ProceduralFragments": false,
+  "FragilityMultiplier": 1.0,
+  "LimbCrushing": true,
+  "BrainDamage": true,
+  "LimbOverflowExplosion": false,
+  "GoreMode": "Default",
+  "AutoHealWounds": true,
+  "ChunkyShotParticles": true,
+  "DismembermentLooseTissue": true,
+  "CrushForceMultiplier": 1.0,
+  "BloomMode": "Fancy",
+  "TracerBullets": true,
+  "FancyEffects": true,
+  "Decals": true,
+  "Lighting": true,
+  "MasterVolume": 1.0,
+  "SfxVolume": 1.0,
+  "UserInterfaceVolume": 1.0,
+  "AmbienceVolume": 1.0,
+  "AmbienceHighpassCutoff": 90.0,
+  "ClampVolume": true,
+  "DistantSoundEffects": true,
+  "BulletCrackWhiz": true,
+  "LogDebugMessages": false,
+  "ShowFramerate": false,
+  "ZoomSensitivity": 1.0,
+  "ThermalVisionUpdateRate": 25,
+  "DeleteWireByContextMenu": true,
+  "TemperatureUnit": "Celsius",
+  "VSync": false,
+  "SMAA": false,
+  "TonemappingMode": "Modern",
+  "Brightness": 100.0,
+  "RenderScale": 1.0,
+  "FramerateLimit": 144,
+  "SimplifiedBackground": false,
+  "WindowMode": "Borderless",
+  "Resolution": null,
+  "ShowTutorial": true,
+  "ToyboxSizeOffset": 483.6
+}
+ [LOG] Registered map "Abyss" with ID cce24b21-779f-44e4-a4f5-9cc5c3fc6b18
+ [LOG] Registered map "Blocks" with ID b77a3f22-10da-4ef5-9dce-0413f15e15c1
+ [LOG] Registered map "Default" with ID fb813068-e717-45de-a97f-4677a41758e6
+ [LOG] Registered map "Humongous" with ID 8a2f165e-d4e9-4e6c-b20c-8ffa660c10c8
+ [LOG] Registered map "Hybrid" with ID 1f444372-71ce-4862-a02e-708d82eb9dc0
+ [LOG] Registered map "Lava" with ID 498b4aad-0ccc-4167-aee2-324a28cd57ae
+ [LOG] Registered map "Sea" with ID 35a41d94-8bc7-47a2-93de-3a297955e97c
+ [LOG] Registered map "Slanted" with ID 75c18cc2-5e0d-4e3c-b966-c852cdd1bb8b
+ [LOG] Registered map "Small" with ID 544cf3d4-018d-4dd1-b442-b3845e07f1a3
+ [LOG] Registered map "Snow" with ID 3924fb95-dc1d-43e9-b8b1-b161b91c1f9b
+ [LOG] Registered map "Tiny" with ID 5b8c90b2-59fb-4fc7-9915-229cbc04ef0d
+ [LOG] Registered map "Tower" with ID 5bb837ca-bbf1-4b64-a39d-33b0ab684e1d
+ [LOG] Registered map "Void" with ID 265b1c13-c372-4ea4-8448-09731f0b0985
+ [LOG] Registered map "Substructure" with ID 004cb5da-0d40-4fc7-aba2-d86a9659c724
+ [LOG] Registered map "Reactor A5" with ID 68f03bb8-448a-4ca7-b130-ecb1effb98f7
+ [LOG] Trust cache does not exist yet :)
+ [LOG] Started background loading task: Steam Workshop Retrieving list
+ [LOG] Finished background loading task: Steam Workshop Retrieving list
+ [LOG] Started background loading task: Contraptions Reading
+ [LOG] Finished background loading task: Contraptions Reading
+ [LOG] Started background loading task: Contraptions Synchronising
+ [LOG] Finished background loading task: Contraptions Synchronising
+ [LOG] Started background loading task: [MOD] Time Accelerator Parsing metadata
+ [LOG] Finished background loading task: [MOD] Time Accelerator Parsing metadata
+ [LOG] Started background loading task: [MOD] Time Accelerator Processing
+ [LOG] Finished background loading task: [MOD] Time Accelerator Processing
+ [WARNING] Could not compile mod Time Accelerator:
+A response to a synchronous request was not received within the timeout window.

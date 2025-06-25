@@ -1,0 +1,25 @@
+{
+  "worlds": [
+    {
+      "name": "Новый мир",
+      "source": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\saves\\Новый мир",
+      "destination": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\backup\\saves\\saves\\Новый мир",
+      "lastChanged": "2024-06-25T20:18:10",
+      "backup": false
+    },
+    {
+      "name": "ВИТЯ",
+      "source": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\saves\\ВИТЯ",
+      "destination": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\backup\\saves\\saves\\ВИТЯ",
+      "lastChanged": "2024-07-23T22:45:10",
+      "backup": false
+    },
+    {
+      "name": "Новый мир (1)",
+      "source": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\saves\\Новый мир (1)",
+      "destination": "C:\\Users\\Вячеслав\\AppData\\Roaming\\.minecraft\\backup\\saves\\saves\\Новый мир (1)",
+      "lastChanged": "2024-07-23T21:09:31",
+      "backup": false
+    }
+  ]
+}

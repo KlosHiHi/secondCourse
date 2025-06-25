@@ -1,0 +1,33 @@
+﻿<Window x:Class="Task5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="Black">
+    <StackPanel>
+        <DockPanel>
+            <Label Content="R" Background="Red" Foreground="White"/>
+            <CheckBox x:Name="RedCheckBox" DockPanel.Dock="Right" VerticalAlignment="Center" 
+                      Checked="CheckBox_Checked" 
+                      Unchecked="CheckBox_Unchecked"/>
+            <Slider x:Name="RedSlider" Maximum="255" Margin="5" ValueChanged="ColorSlider_ValueChanged" TickFrequency="1" IsEnabled="False"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="G" Background="#00ff00" Foreground="White"/>
+            <CheckBox x:Name="GreenCheckBox" DockPanel.Dock="Right" VerticalAlignment="Center" 
+                      Checked="CheckBox_Checked" 
+                      Unchecked="CheckBox_Unchecked"/>
+            <Slider x:Name="GreenSlider" Maximum="255" Margin="5" ValueChanged="ColorSlider_ValueChanged" TickFrequency="1" IsEnabled="False"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="B" Background="Blue" Foreground="White"/>
+            <CheckBox x:Name="BlueCheckBox" DockPanel.Dock="Right" VerticalAlignment="Center" 
+                      Checked="CheckBox_Checked" 
+                      Unchecked="CheckBox_Unchecked"/>
+            <Slider x:Name="BlueSlider" Maximum="255" Margin="5" ValueChanged="ColorSlider_ValueChanged" TickFrequency="1" IsEnabled="False"/>
+        </DockPanel>
+        
+    </StackPanel>
+</Window>

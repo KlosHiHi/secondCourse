@@ -1,0 +1,30 @@
+﻿<Window x:Class="LabWork33.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork33"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <ListView x:Name="FilesListView" Height="400">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Имя файла"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding LastWriteTime}" Header="Дата изменения"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Extension}" Header="Расширение"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Length, StringFormat={}{0:0 Б}}" Header="Размер"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="FileInfoButton" Content="Подробнее" Click="FileInfoButton_Click"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>

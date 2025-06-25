@@ -1,0 +1,96 @@
+﻿<Window x:Class="LabWork31.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork31"
+        mc:Ignorable="d"
+        Title="Профиль пользователя" Height="450" Width="800">
+    <StackPanel>
+        <Grid Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Target="{Binding ElementName=LoginTextBox}" Content="_Логин"/>
+            <TextBox Grid.Column="1" x:Name="LoginTextBox" MaxLength="30" Margin="1"/>
+
+            <Label Grid.Row="1" Target="{Binding ElementName=EmailTextBox}" Content="_Email"/>
+            <TextBox Grid.Column="1" Grid.Row="1" x:Name="EmailTextBox" MaxLength="100" Margin="1" TextChanged="EmailTextBox_TextChanged"/>
+
+            <TextBox x:Name="BioTextBox" Grid.Row="2" Grid.Column="1" MaxLength="200" AcceptsReturn="True" TextWrapping="Wrap" TextChanged="BioTextBox_TextChanged" Margin="1"/>
+            <DockPanel Grid.Row="2">
+                <TextBlock DockPanel.Dock="Bottom" x:Name="BioLenghtTextBlock" Text="Осталось: 200 символов"/>
+                <Label Target="{Binding ElementName=BioTextBox}" Content="_О себе"/>
+            </DockPanel>
+
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <PasswordBox x:Name="PasswordBox" Grid.Column="1" PasswordChanged="PasswordBox_PasswordChanged" Margin="1"/>
+            <DockPanel Margin="5">
+                <TextBlock DockPanel.Dock="Bottom" x:Name="PasswordLenghtTextBlock" Text="Вы ввели 0 символов"/>
+                <Label Target="{Binding ElementName=PasswordBox}" Content="_Пароль"/>
+            </DockPanel>
+
+            <Label Grid.Row="1" Target="{Binding ElementName=ConfirmPasswordBox}" Content="_Подтверждение пароля"/>
+            <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="ConfirmPasswordBox" Margin="1" PasswordChanged="ConfirmPasswordBox_PasswordChanged"/>
+
+        </Grid>
+
+        <DockPanel Margin="5">
+            <DatePicker x:Name="BirthDatePicker" DisplayDateStart="01.01.1900" SelectedDateChanged="BirthDatePicker_SelectedDateChanged"/>
+            <TextBlock x:Name="AgeTextBlock" Text="Возраст: 0" DockPanel.Dock="Right" Width="100" TextAlignment="Right" HorizontalAlignment="Right"/>
+        </DockPanel>
+        
+        <DockPanel Margin="5">
+            <TextBlock x:Name="ExpYearTextBlock" DockPanel.Dock="Right" Text="Стаж: 0 лет" TextAlignment="Right" Width="100"/>
+            <Slider x:Name="ExpYearSlider" TickFrequency="5" Maximum="50" TickPlacement="BottomRight" ValueChanged="Slider_ValueChanged"/>
+        </DockPanel>
+
+        <DockPanel>
+            <Calendar x:Name="DisplayMeetingsCalendar" Margin="3" HorizontalAlignment="Left" SelectionMode="MultipleRange">
+                <Calendar.BlackoutDates>
+                    <CalendarDateRange Start="5/1/2025" End="5/4/2025"></CalendarDateRange>
+                    <CalendarDateRange Start="5/8/2025" End="5/11/2025"></CalendarDateRange>
+                    <CalendarDateRange Start="5/17/2025" End="5/18/2025"></CalendarDateRange>
+                    <CalendarDateRange Start="5/24/2025" End="5/25/2025"></CalendarDateRange>
+                    <CalendarDateRange Start="5/31/2025" End="5/31/2025"></CalendarDateRange>
+                </Calendar.BlackoutDates>
+            </Calendar>
+            <WrapPanel Orientation="Vertical">
+                <DatePicker x:Name="SelectMeetingDatePicker" Height="30" Margin="3" SelectedDateChanged="SelectMeetingDatePicker_SelectedDateChanged">
+                    <DatePicker.BlackoutDates>
+                        <CalendarDateRange Start="5/1/2025" End="5/4/2025"></CalendarDateRange>
+                        <CalendarDateRange Start="5/8/2025" End="5/11/2025"></CalendarDateRange>
+                        <CalendarDateRange Start="5/17/2025" End="5/18/2025"></CalendarDateRange>
+                        <CalendarDateRange Start="5/24/2025" End="5/25/2025"></CalendarDateRange>
+                        <CalendarDateRange Start="5/31/2025" End="5/31/2025"></CalendarDateRange>
+                    </DatePicker.BlackoutDates>
+                </DatePicker>
+                <Button x:Name="SetMeetingButton" Content="Добавить встречу" Margin="3" Click="SetMeetingButton_Click"/>
+                <TextBlock x:Name="DisplaySelectedDateTextBlock" Text="Дата: " Margin="3"/>
+            </WrapPanel>
+            <WrapPanel Orientation="Vertical">
+                <TextBlock x:Name="DifferentPasswordTipText" Foreground="Red" Text="Пароли не совпадают!" Visibility="Collapsed"/>
+                <TextBlock x:Name="UncorrectEmailTipText" Foreground="Red" Text="Введён некорректный Email!" Visibility="Collapsed"/>
+            </WrapPanel>
+        </DockPanel>
+    </StackPanel>
+</Window>

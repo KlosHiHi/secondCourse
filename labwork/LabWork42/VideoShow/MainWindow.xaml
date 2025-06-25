@@ -1,0 +1,34 @@
+﻿<Window x:Class="VideoShow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VideoShow"
+        mc:Ignorable="d"
+        Title="Видео и звуки" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="MediumPurple"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <MediaElement x:Name="VideoMediaElement" Stretch="UniformToFill"/>
+
+        <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="AsteriskButton" Click="AsteriskButton_Click" Content="Asterisk"/>
+            <Button Name="HandButton" Margin="0,5" Click="HandButton_Click" Content="Hand"/> 
+            <Button Name="IphoneButton" Margin="0,5" Click="IphoneButton_Click"  Content="Iphone"/>
+            <Button Name="AndroidButton" Margin="0,5" Click="AndroidButton_Click" Content="Android"/>
+            <Button Name="HuaweiButton" Margin="0,5" Click="HuaweiButton_Click"  Content="Huawei"/>
+            <Button Name="StopButton" Margin="0,5" Width="40" Content="⏹" Click="StopButton_Click"/>
+        </StackPanel>
+        <MediaElement x:Name="IphoneSound" LoadedBehavior="Manual"  Visibility="Collapsed"/>
+        <MediaElement x:Name="AndroidSound" LoadedBehavior="Manual" Visibility="Collapsed"/>
+        <MediaElement x:Name="HuaweiSound" LoadedBehavior="Manual" Visibility="Collapsed"/>
+    </Grid>
+</Window>

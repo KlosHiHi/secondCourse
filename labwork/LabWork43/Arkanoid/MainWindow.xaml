@@ -1,0 +1,62 @@
+﻿<Window x:Class="Arkanoid.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Arkanoid"
+        Title="Арканоид" Height="700" Width="900" MinHeight="700" MinWidth="900"
+        PreviewKeyDown="Window_PreviewKeyDown" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Margin" Value="0 10 10 0"/>
+            <Setter Property="Foreground" Value="MediumPurple"/>
+            <Setter Property="FontFamily" Value="./Fonts/#SArcade"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="0 5 0 0"/>
+            <Setter Property="Margin" Value="0 10 10 0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="./Fonts/#SArcade"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderBrush" Value="MediumPurple"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel Background="Black">
+        <DockPanel Background="Black" DockPanel.Dock="Right" Width="200">
+            <StackPanel DockPanel.Dock="Bottom">
+                <Button x:Name="NewGameButton" Content="NEW GAME" Click="NewGameButton_Click"/>
+                <TextBlock Text="ROUND" TextAlignment="Right"/>
+                <TextBlock x:Name="RoundTextBlock" Text="1" TextAlignment="Right" Foreground="White"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="HIGH"/>
+                <TextBlock Text="SCORE"/>
+                <TextBlock x:Name="HighScoreTextBox" Text="0000" TextAlignment="Right" Foreground="White"/>
+                <TextBlock Text="" TextAlignment="Right" Foreground="White"/>
+                <TextBlock x:Name="ScoreTextBox" Text="0" TextAlignment="Right" Foreground="White"/>
+            </StackPanel>
+        </DockPanel>
+        <Canvas x:Name="GameCanvas" Margin="10" Width="670" Height="650">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Images/background.jpg" Stretch="UniformToFill"/>
+            </Canvas.Background>
+            <Rectangle x:Name="RacketRectangle" Width="80" Height="20" Canvas.Left="300" Canvas.Top="550">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/racket.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
+    </DockPanel>
+</Window>

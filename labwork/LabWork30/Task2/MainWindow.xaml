@@ -1,0 +1,32 @@
+﻿<Window x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="логин"/>
+        <Label Content="пароль" Grid.Row="1"/>
+
+        <StackPanel Grid.Row="2">
+            <CheckBox x:Name="ShowPasswordCheckBox" Content="Показать пароль" Checked="ShowPasswordCheckBox_Checked" Unchecked="ShowPasswordCheckBox_Checked"/>
+        </StackPanel>
+        
+        <TextBox Grid.Column="1"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Row="1" Grid.Column="1" PasswordChar="*" PasswordChanged="PasswordBox_PasswordChanged"/>
+        <TextBox x:Name="PassworTextBox" Grid.Row="1" Grid.Column="1" Visibility="Collapsed"/>
+        <Button x:Name="AuthorizationButton" Content="Авторизаваться" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabWork39.NavigationPage"
+             Title="Главная">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        
+        <StackLayout Orientation="Vertical">
+            <Button Text="Task1" Clicked="ToTask1Button_Clicked" Margin="10" WidthRequest="300"/>
+            <Button Text="Task2" Clicked="ToTask2Button_Clicked" Margin="10"/>
+            <Button Text="Task3" Clicked="ToTask3Button_Clicked" Margin="10"/>
+            <Button Text="Task4" Clicked="ToTask4Button_Clicked" Margin="10"/>
+            <Button Text="Task5" Clicked="ToTask5Button_Clicked" Margin="10"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

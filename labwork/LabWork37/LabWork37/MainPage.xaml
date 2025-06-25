@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabWork37.MainPage">
+    
+    <StackLayout Orientation="Vertical" Padding="20">
+        <Label Text="Список файлов"
+                Style="{StaticResource Headline}"
+                HorizontalOptions="Center"/>
+
+        <Entry x:Name="FileNameEntry" Placeholder="Имя файла" TextChanged="FileNameEntry_TextChanged" Margin="5"/>
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="MoreCheckBox" CheckedChanged="MultiSizeCheckBox_CheckedChanged"/>
+                <Label Text="Больше или равно" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            
+            <Entry x:Name="MoreMultiFileSizeEntry" Placeholder="Размер файла" Keyboard="Numeric" Margin="5" TextChanged="MultiFileSizeEntry_TextChanged" Grid.Column="1"/>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <CheckBox x:Name="LessCheckBox" CheckedChanged="MultiSizeCheckBox_CheckedChanged"/>
+                <Label Text="Меньше или равно" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <Entry x:Name="LessMultiFileSizeEntry" Placeholder="Размер файла" Keyboard="Numeric" Margin="5" TextChanged="MultiFileSizeEntry_TextChanged" Grid.Column="1" Grid.Row="1"/>
+
+            <Line Stroke="#919191" StrokeThickness="2" Y2="140" Grid.Column="2" Grid.RowSpan="2"/>
+
+            <Entry x:Name="FileSizeEntry" Placeholder="Размер файла" Keyboard="Numeric" TextChanged="FileSizeEntry_TextChanged" Margin="5" Grid.Column="2"/>
+            <StackLayout Orientation="Horizontal" Margin="5" Grid.Column="2" Grid.Row="1">
+                <RadioButton Value="more" Content="Больше или равно" CheckedChanged="SizeRadio_CheckedChanged"/>
+                <RadioButton Value="less" Content="Меньше или равно" CheckedChanged="SizeRadio_CheckedChanged"/>
+                <RadioButton Value="all" Content="Все файлы" IsChecked="True" CheckedChanged="SizeRadio_CheckedChanged"/>
+            </StackLayout>
+        </Grid>
+
+        <StackLayout Orientation="Horizontal">
+            <DatePicker x:Name="FileDatePicker" MaximumDate="{Binding CurrentDate}" Grid.Column="1" DateSelected="DatePicker_DateSelected"/>
+            <Label Text="Показать файлы, изменённые после" VerticalTextAlignment="Center" Margin="5"/>
+            <CheckBox x:Name="DateCheckBox" CheckedChanged="DateCheckBox_CheckedChanged"/>
+        </StackLayout>
+
+        <Button x:Name="ClearEntryButton" Text="Сбросить фильтры" Clicked="ClearEntryButton_Clicked" Margin="5"/>
+
+        <ListView x:Name="FilesListView" ItemsSource="{Binding Files}" RowHeight="30">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" Grid.Column="0"/>
+                                <Label Text="{Binding Extension}" Grid.Column="1"/>
+                                <Label Text="{Binding Length}" Grid.Column="2"/>
+                                <Label Text="{Binding CreationTime}" Grid.Column="3"/>
+                                <Label Text="{Binding LastWriteTime}" Grid.Column="4"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Label x:Name="FilesQuantityLable" Text="Показано 0 из 0 записей"/>
+    </StackLayout>
+    
+</ContentPage>

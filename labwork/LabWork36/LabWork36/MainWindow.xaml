@@ -1,0 +1,157 @@
+﻿<Window x:Class="LabWork36.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork36"
+        mc:Ignorable="d"
+        Title="notepad+" Height="450" Width="800"
+        Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="Save"/>
+        <KeyBinding Modifiers="Ctrl" Key="O" Command="Open"/>
+        <KeyBinding Modifiers="Ctrl" Key="N" Command="New"/>
+    </Window.InputBindings>
+    <DockPanel>
+        <StackPanel x:Name="HamburgerStackPanel" Background="DarkSeaGreen" Width="90">
+            <TextBlock Text="Menu" Margin="3"/>
+            <StackPanel  Margin="5" Orientation="Horizontal">
+                <Button Height="25" Width="25" Background="White" Margin="0 0 7 0">
+                    <Image Source="/Image/github.png"/>
+                </Button>
+                <TextBlock Text="github" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <Button Height="25" Width="25" Background="White" Margin="0 0 7 0">
+                    <Image Source="/Image/discord.png"/>
+                </Button>
+                <TextBlock Text="discord" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <Button Height="25" Width="25" Background="White" Margin="0 0 7 0">
+                    <Image Source="/Image/tictok.png"/>
+                </Button>
+                <TextBlock Text="tiktok" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <StatusBar x:Name="MainStatusBar" DockPanel.Dock="Bottom" BorderThickness="3" BorderBrush="DarkOliveGreen">
+            <StatusBarItem>
+                <TextBlock x:Name="SymbolsQuantity"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <WrapPanel>
+                    <TextBlock x:Name="ScaleTextBlock" Text="Масштаб: 100" Margin="0 0 5 0" VerticalAlignment="Center"/>
+                    <Button x:Name="MinusScaleButton" Height="20" Width="20" Background="White" Content="➖" Click="MinusScaleButton_Click"/>
+                    <Slider x:Name="ScaleSlider" Value="100" Width="150" VerticalAlignment="Center" Margin="5 0 5 0" Minimum="10" Maximum="500" ValueChanged="Slider_ValueChanged"/>
+                    <Button x:Name="PlusScaleButton" Height="20" Width="20" Background="White" Content="➕" Click="PlusScaleButton_Click"/>
+                    <TextBlock x:Name="DateTextBlock"/>
+                </WrapPanel>
+            </StatusBarItem>
+        </StatusBar>
+        <DockPanel DockPanel.Dock="Top">
+            <Button x:Name="ShowHamburgerButton" Height="25" Width="20" BorderBrush="ForestGreen" BorderThickness="3" Click="ShowHamburgerButton_Click">
+                <Image Source="/Image/menu.png"/>
+            </Button>
+            <Menu BorderBrush="ForestGreen" BorderThickness="3">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Новое окно" InputGestureText="Ctrl+N" Command="New">
+                        <MenuItem.Icon>
+                            <Image Source="/Image/create.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Открыть" InputGestureText="Ctrl+O" Command="Open">
+                        <MenuItem.Icon>
+                            <Image Source="/Image/open.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Сохранить" InputGestureText="Ctrl+S" Command="Save">
+                        <MenuItem.Icon>
+                            <Image Source="/Image/save.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Печать" InputGestureText="Ctrl+P">
+                        <MenuItem.Icon>
+                            <Image Source="/Image/print.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem x:Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/Image/close.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Формат">
+                    <MenuItem Header="Перенос по словам" IsCheckable="True" IsChecked="True"/>
+                    <MenuItem Header="Шрифт..."/>
+                </MenuItem>
+                <MenuItem Header="Вид">
+                    <MenuItem Header="Масштаб">
+                        <MenuItem Header="Увеличить" Click="PlusScaleButton_Click"/>
+                        <MenuItem Header="Уменьшить" Click="MinusScaleButton_Click"/>
+                        <MenuItem Header="Восстановить масштаб по умолчанию"/>
+                    </MenuItem>
+                    <MenuItem x:Name="IsStatusBarShowMenuItem" Header="Строка состояния" IsCheckable="True" IsChecked="True" Checked="MenuItem_Checked" Unchecked="MenuItem_Checked"/>
+                </MenuItem>
+                <MenuItem Header="Справка">
+
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox Margin="10 0 10 0" IsEditable="True" Width="50">
+                <ComboBoxItem Content="8"/>
+                <ComboBoxItem Content="10"/>
+                <ComboBoxItem Content="12"/>
+                <ComboBoxItem Content="14" IsSelected="True"/>
+                <ComboBoxItem Content="16"/>
+                <ComboBoxItem Content="18"/>
+                <ComboBoxItem Content="20"/>
+                <ComboBoxItem Content="24"/>
+                <ComboBoxItem Content="28"/>
+                <ComboBoxItem Content="32"/>
+            </ComboBox>
+            <WrapPanel Margin="0 0 10 0">
+                <ToggleButton x:Name="SetBoldTextButton" IsThreeState="False" Margin="2 0 2 0" Background="White">
+                    <Image Source="/Image/bold.png" Height="20" Width="20"/>
+                </ToggleButton>
+                <ToggleButton x:Name="SetItalicTextButton" IsThreeState="False" Margin="2 0 2 0" Background="White">
+                    <Image Source="/Image/italic.png" Height="20" Width="20"/>
+                </ToggleButton>
+                <ToggleButton x:Name="SetUnderlineTextButton" IsThreeState="False" Margin="2 0 2 0" Background="White">
+                    <Image Source="/Image/underline.png" Height="20" Width="20"/>
+                </ToggleButton>
+            </WrapPanel>
+            <WrapPanel>
+                <ToggleButton x:Name="LeftAlignButton" IsThreeState="False" Margin="2 0 2 0" Click="LeftAlignButton_Click" Background="White">
+                    <Image Source="/Image/left.png" Height="20" Width="20"/>
+                </ToggleButton>
+                <ToggleButton x:Name="CenterAlignButton" IsThreeState="False" Margin="2 0 2 0" Click="CenterAlignButton_Click" Background="White">
+                    <Image Source="/Image/center.png" Height="20" Width="20"/>
+                </ToggleButton>
+                <ToggleButton x:Name="RightAlignButton" IsThreeState="False" Margin="2 0 2 0" Click="RightAlignButton_Click" Background="White">
+                    <Image Source="/Image/right.png" Height="20" Width="20"/>
+                </ToggleButton>
+                <ToggleButton x:Name="JustifyAlignButton" IsThreeState="False" Margin="2 0 2 0" Click="JustifyAlignButton_Click" Background="White">
+                    <Image Source="/Image/justify.png" Height="20" Width="20"/>
+                </ToggleButton>
+            </WrapPanel>
+            <Button x:Name="ToColorPageButton" Margin="10 0 2 0" BorderBrush="#FF707070" Background="White" BorderThickness="0.8" Padding="1" Click="ToColorPageButton_Click">
+                <Image Source="/Image/paint.png" Height="20" Width="20"/>
+            </Button>
+        </ToolBar>
+        <TextBox x:Name="MainTextBox" BorderThickness="5" BorderBrush="DarkSeaGreen" TextAlignment="Left" TextChanged="MainTextBox_TextChanged">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="EraseContextMenuItem" Header="Очистить" Click="EraseContextMenuItem_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Открыть"/>
+                    <MenuItem Header="Сохранить" InputGestureText="Ctrl+S" Command="Save"/>
+                    <Separator/>
+                    <MenuItem Header="Выход" Click="ExitMenuItem_Click"/>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+    </DockPanel>
+</Window>

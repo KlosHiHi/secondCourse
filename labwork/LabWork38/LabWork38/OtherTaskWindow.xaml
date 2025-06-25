@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabWork38.OtherTaskWindow">
+
+    <StackLayout>
+        
+        <Entry x:Name="PageCountEntry" Placeholder="Кол-во элементов" TextChanged="PageCountEntry_TextChanged" Margin="5"/>
+        <Entry x:Name="FileNameEntry" Placeholder="Имя файла" TextChanged="FileNameEntry_TextChanged" Margin="5"/>
+        
+        <Line Stroke="Purple" X2="2000" HorizontalOptions="Center"/>
+        
+        <ListView x:Name="FilesListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" Grid.Column="0"/>
+                                <Label Text="{Binding Length}" Grid.Column="1"/>
+                                <Label Text="{Binding CreationTime}" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="ToFirstPageButton" Text="&lt;&lt;" Clicked="ToBorderPageButton_Clicked" IsEnabled="False"/>
+            <Button x:Name="PreviousPageButton" Text="&lt;" Clicked="SetPageButton_Clicked" Grid.Column="1" IsEnabled="False"/>
+            <Entry Placeholder="Номер страницы" Grid.Column="2" WidthRequest="200" TextChanged="PageNumberEntry_TextChanged"/>
+            <Button x:Name="NextPageButton" Text=">" Clicked="SetPageButton_Clicked" Grid.Column="3"/>
+            <Button x:Name="ToLastPageButton" Text=">>" Clicked="ToBorderPageButton_Clicked" Grid.Column="4"/>
+        </Grid>
+
+        <Label x:Name="ShownPagesLabel" Text="Показано {x} из {y} записей. Всего страниц: {n}" FontSize="16"/>
+        
+    </StackLayout>
+</ContentPage>

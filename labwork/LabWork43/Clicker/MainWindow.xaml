@@ -1,0 +1,49 @@
+﻿<Window x:Class="Clicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clicker"
+        mc:Ignorable="d"
+        Title="Печенье Нажималка" Height="500" Width="50" MaxWidth="1000" MaxHeight="1000" MinHeight="500" MinWidth="500">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Images/background.jpg" Width="150" Stretch="UniformToFill" Grid.RowSpan="2"/>
+            <Image x:Name="GrandmaImage" Source="/Images/grandma.png" Stretch="Uniform" Height="250" Margin="5 0 5 0" Cursor="Hand" VerticalAlignment="Bottom" MouseDown="GrandmaImage_MouseDown"/>
+
+            <TextBlock x:Name="GrandmothersQuantityTextBlock" Text="бабушки: 0" Grid.Row="2"/>
+        </Grid>
+
+        <StackPanel Background="#FF3D5889" Width="10"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <MediaElement x:Name="BackgroundMedieElement" Stretch="UniformToFill" Grid.RowSpan="3" HorizontalAlignment="Center" LoadedBehavior="Manual" MediaEnded="BackgroundMedieElement_MediaEnded"/>
+
+            <Ellipse x:Name="CookieEllipse" Cursor="Hand" Height="170" Width="170" VerticalAlignment="Center" MouseDown="CookieEllipse_MouseDown" Grid.Row="1">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/Images/cookie.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <TextBlock x:Name="CookiesQuantityTextBlock" Text="печенье : 0" Grid.Row="2"/>
+        </Grid>
+    </DockPanel>
+
+</Window>

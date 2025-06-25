@@ -1,0 +1,35 @@
+{
+  "clientToken": "b81524e3-3f01-43aa-8c52-6600c8f4f565",
+  "accounts": {
+    "2a138a5b31b911e9aff5002590a1379b": {
+      "username": "KlosHi25",
+      "userID": "KlosHi25",
+      "displayName": "KlosHi25",
+      "accessToken": "a61bd9b8-511d-4e2c-87d3-cf78e54f924b",
+      "uuid": "2a138a5b-31b9-11e9-aff5-002590a1379b",
+      "type": "tlauncher",
+      "skinType": "tlauncher",
+      "premiumAccount": false,
+      "profiles": [
+        {
+          "id": "2a138a5b-31b9-11e9-aff5-002590a1379b",
+          "name": "KlosHi25"
+        }
+      ],
+      "selectedProfile": {
+        "id": "2a138a5b-31b9-11e9-aff5-002590a1379b",
+        "name": "KlosHi25"
+      }
+    },
+    "52c33df409e1486a95b66d63f2a62b0d": {
+      "username": "KlosHi25",
+      "userID": "KlosHi25",
+      "displayName": "KlosHi25",
+      "uuid": "52c33df409e1486a95b66d63f2a62b0d",
+      "type": "free",
+      "premiumAccount": false
+    }
+  },
+  "selectedAccountUUID": "52c33df409e1486a95b66d63f2a62b0d",
+  "freeAccountUUID": "52c33df409e1486a95b66d63f2a62b0d"
+}

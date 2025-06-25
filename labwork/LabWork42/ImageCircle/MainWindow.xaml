@@ -1,0 +1,17 @@
+﻿<Window x:Class="ImageCircle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ImageCircle"
+        Title="Карусель изображения" Height="600" Width="600">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" >
+            <!--<Button x:Name="CancelButton" Width="50" DockPanel.Dock="Right" Foreground="White"
+                     BorderThickness="3" Background="IndianRed" Content="🛑" FontSize="30"
+                    Click="CancelButton_Click"/>-->
+            <Button x:Name="SetImagesButton" Content="Загрузить изображения"
+                FontSize="30" Foreground="White" Background="YellowGreen" BorderThickness="3"
+                Click="SetImagesButton_Click"/>
+        </DockPanel>
+        <Image x:Name="ShownImage" Stretch="Uniform"/>
+    </DockPanel>
+</Window>

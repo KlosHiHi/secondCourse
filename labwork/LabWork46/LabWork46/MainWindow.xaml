@@ -1,0 +1,27 @@
+﻿<Window x:Class="LabWork46.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork46"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Button x:Name="SqlQueryButton" Content="Выполнить" DockPanel.Dock="Right" Click="SqlQueryButton_Click"  Margin="5"/>
+            <TextBlock Text="Введите запрос" Margin="5"/>
+            <TextBox x:Name="SqlTextBox" Text="UPDATE Game SET Price += 1"  Margin="5"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBlock Text="Обновление по индексу" Margin="5"/>
+            <Button x:Name="UpdateButton" DockPanel.Dock="Right" Content="Обновить" Margin="5" Click="UpdateButton_Click"/>
+            <TextBox x:Name="IdTextBox" Text="1" Margin="5"/>
+            <TextBox x:Name="newTitleTextBox" Text="Postal 2" Margin="5"/>
+            <TextBox x:Name="newPriceTextBox" Text="20" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            
+        </DockPanel>
+        <WrapPanel/>
+    </DockPanel>
+</Window>
